@@ -19,7 +19,7 @@ export class AuthenticationService {
     try {
       const user = await this.usersService.getByEmail(email);
       await this.verifyPassword(plainTextPassword, user.password);
-      user.password = undefined;
+      // user.password = undefined;
       return user;
     } catch {
       throw new HttpException(
